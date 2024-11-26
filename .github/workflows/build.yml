@@ -30,7 +30,8 @@ jobs:
           path: ${{ github.workspace }}
           depth: 10
 
-      - run: ls -la ${{ github.workspace }}
+      - run: ls -la
+        working-directory: ${{ github.workspace }}
 
       - run: ${{ github.workspace }}/.ci/linux.${{ matrix.dist }}/script.sh ${{ github.workspace }}/veyon /tmp
         working-directory: ${{ github.workspace }}/veyon
