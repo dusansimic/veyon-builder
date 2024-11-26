@@ -25,5 +25,4 @@ jobs:
           path: veyon
           submodules: true
 
-      - run: ${{ github.workspace }}/veyon-builder/.ci/linux.${{ matrix.dist }}/script.sh ${{ github.workspace }} veyon /tmp
-        working-directory: ${{ github.workspace }}/veyon
+      - run: veyon-builder/.ci/linux.${{ matrix.dist }}/script.sh ${{ github.workspace }} veyon /tmp
