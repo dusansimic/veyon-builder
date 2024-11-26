@@ -24,3 +24,9 @@ jobs:
           submodules: true
 
       - run: .ci/linux.${{ matrix.dist }}/script.sh $GITHUB_WORKSPACE/veyon /tmp
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: veyon-rpms
+          path: /tmp/*.rpm
+          retention-days: 1
