@@ -8,5 +8,5 @@ __GITHUB_WORKSPACE=$1
 __VEYON_DIR=$2
 __TMP_DIR=$3
 
-${__GITHUB_WORKSPACE}/veyon-builder/.ci/common/linux-build.sh ${__GITHUB_WORKSPACE}/${__VEYON_DIR} $__TMP_DIR
-${__GITHUB_WORKSPACE}/veyon_builder/.ci/common/finalize-rpm.sh ${__GITHUB_WORKSPACE}/${__VEYON_DIR} $__TMP_DIR
+veyon-builder/.ci/common/linux-build.sh ${__GITHUB_WORKSPACE}/${__VEYON_DIR} $__TMP_DIR
+veyon_builder/.ci/common/finalize-rpm.sh ${__GITHUB_WORKSPACE}/${__VEYON_DIR} $__TMP_DIR
