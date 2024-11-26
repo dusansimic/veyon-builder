@@ -3,7 +3,7 @@ name: "CI Builds"
 on: [push, workflow_dispatch]
 
 env:
-  VEYON_VERSION: v4.9.0
+  VEYON_VERSION: v4.99.0
 
 jobs:
   build-linux:
