@@ -15,8 +15,6 @@ jobs:
     container: ghcr.io/${{ github.repository }}/ci.linux.${{ matrix.dist }}
     steps:
       - uses: actions/checkout@v4
-        with:
-          path: veyon-builder
 
       - uses: actions/checkout@v4
         with:
@@ -25,4 +23,4 @@ jobs:
           path: veyon
           submodules: true
 
-      - run: veyon-builder/.ci/linux.${{ matrix.dist }}/script.sh $GITHUB_WORKSPACE/veyon /tmp
+      - run: .ci/linux.${{ matrix.dist }}/script.sh $GITHUB_WORKSPACE/veyon /tmp
