@@ -25,7 +25,7 @@ jobs:
 
       - uses: jaywcjlove/github-action-folder-tree@main
         with:
-          path: .
+          path: ${{ github.workspace }}
           depth: 10
 
       - run: ${{ github.workspace }}/.ci/linux.${{ matrix.dist }}/script.sh ${{ github.workspace }}/veyon /tmp
