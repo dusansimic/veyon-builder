@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+set -ex
 
 cd $2
 
@@ -17,6 +17,3 @@ for i in *.rpm ; do
 	echo Package information for $i:
 	rpm -qpR $i
 done
-
-# move to Docker volume
-mv -v *.rpm $1
