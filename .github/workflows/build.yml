@@ -16,7 +16,26 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - run: tree
+      - run: |
+          list_dir() {
+            local dir="$1"  # Current directory
+            local prefix="$2"  # Indentation prefix
+
+            # List contents of the current directory
+            for entry in "$dir"/*; do
+              if [ -e "$entry" ]; then
+                # Extract the basename of the entry
+                local name=$(basename "$entry")
+                echo "${prefix}${name}"
+
+                # If entry is a directory, recursively call list_dir
+                if [ -d "$entry" ]; then
+                  list_dir "$entry" "${prefix}    "
+                fi
+              fi
+            done
+          }
+          list_dir "." "  "
 
       # - uses: actions/checkout@v4
       #   with:
