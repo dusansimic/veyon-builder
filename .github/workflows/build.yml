@@ -1,6 +1,6 @@
 name: "CI Builds"
 
-on: [workflow_dispatch]
+on: [push, workflow_dispatch]
 
 env:
   VEYON_VERSION: v4.9.0
